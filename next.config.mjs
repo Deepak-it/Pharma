@@ -1,19 +1,31 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    reactStrictMode: true,
     async headers() {
       return [
         {
-          source: '/about',
+          source: '/(.*)',
           headers: [
             {
               key: 'Cache-Control',
-              value: 's-maxage=1, stale-while-revalidate=59',
+              value: 'no-store, no-cache, must-revalidate, proxy-revalidate',
+            },
+            {
+              key: 'Pragma',
+              value: 'no-cache',
+            },
+            {
+              key: 'Expires',
+              value: '0',
+            },
+            {
+              key: 'Surrogate-Control',
+              value: 'no-store',
             },
           ],
         },
       ];
-    }
-};
-
-export default nextConfig;
+    },
+  };
+  
+  export default nextConfig;
+  
