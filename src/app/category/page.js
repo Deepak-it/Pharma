@@ -11,7 +11,7 @@ import EditProduct from '../editproduct/page';
 
 const fetchProducts = async () => {
   try {
-    const res = await axios.get('http://localhost:3000/api/fetchProducts');
+    const res = await axios.get('/api/fetchProducts');
     return res.data;
   } catch (error) {
     console.error(error);
@@ -37,7 +37,7 @@ const ManageProducts = () => {
 
   const handleDelete = async () => {
     try {
-      await axios.delete('http://localhost:3000/api/deleteProduct', {
+      await axios.delete('/api/deleteProduct', {
         data: { productId: selectedProduct._id },
       });
       setShowDeleteModal(false);
@@ -50,7 +50,7 @@ const ManageProducts = () => {
   const handleSave = async (updatedProduct) => {
     setLoading(true);
     try {
-      await axios.put('http://localhost:3000/api/updateProduct', {
+      await axios.put('/api/updateProduct', {
         productId: updatedProduct._id,
         updates: {
           productName: updatedProduct.productName,
