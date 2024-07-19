@@ -14,9 +14,6 @@ const EditDialog = ({ show, handleClose, handleSave, product }) => {
   }, [product]);
 
 
-  useEffect(() => {
-    console.log('selected product details', product)
-  })
   const handleSaveClick = () => {
     handleSave({
       ...product,

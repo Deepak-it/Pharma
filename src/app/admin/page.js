@@ -117,14 +117,12 @@ export default function Admin() {
             if (result) {
                 router.push('/category');
             }
-            console.log(result.message);
         } catch (error) {
             console.error('Error:', error);
         }
     };
 
     const handleSubmit2 = async () => {
-        debugger;
         const body = {
             category: category.categoryName,
         };
@@ -137,7 +135,6 @@ export default function Admin() {
                 body: JSON.stringify(body)
             });
             const result = await response.json();
-            console.log(result.message);
         } catch (error) {
             console.error('Error:', error);
         }

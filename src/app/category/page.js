@@ -73,7 +73,6 @@ const ManageProducts = () => {
   };
 
   const handleEditClick = (product) => {
-    alert('inside click')
     setSelectedProduct(product);
     setShowEditForm(true); // Show the edit form
   };
@@ -92,7 +91,7 @@ const ManageProducts = () => {
               onSave={handleSave}
               onClose={() => setShowEditForm(false)}
             /> : 
-          <div className="table-wrapper">
+          <div style = {{width: '90vw', overflowX: 'scroll'}} className="table-wrapper">
             <div className="table-title">
               <div className="row">
                 <div className="col-sm-9">

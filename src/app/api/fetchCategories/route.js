@@ -8,7 +8,6 @@ async function getCategories() {
     const database = await connectToDb();
     const collection = database.collection('categories');
     const result = await collection.find({}).toArray();
-    console.log(result)
     return result;
   } catch (error) {
     console.error(error);
