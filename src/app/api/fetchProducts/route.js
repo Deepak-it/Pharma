@@ -2,7 +2,6 @@
 import connectToDb from "../../../../db";
 import { NextResponse } from 'next/server';
 
-
 async function getProducts() {
   try {
     const database = await connectToDb();
@@ -22,6 +21,10 @@ export async function GET(request) {
       status: 200,
       headers: {
         'Content-Type': 'application/json',
+        'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate',
+        'Pragma': 'no-cache',
+        'Expires': '0',
+        'Surrogate-Control': 'no-store',
       },
     });
   } catch (error) {
@@ -29,6 +32,10 @@ export async function GET(request) {
       status: 500,
       headers: {
         'Content-Type': 'application/json',
+        'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate',
+        'Pragma': 'no-cache',
+        'Expires': '0',
+        'Surrogate-Control': 'no-store',
       },
     });
   }
