@@ -16,9 +16,10 @@ function Login () {
         e.preventDefault();
     
         try {
+          debugger;
           const response = await axios.post('/api/validateLogin', { username, password });
           if (response?.data?.message === "Login successful") {
-            router.push('/category')
+            router.push('/products')
           }
         } 
         catch (error) {

@@ -115,7 +115,7 @@ export default function Admin() {
             });
             const result = await response.json();
             if (result) {
-                router.push('/category');
+                router.push('/products');
             }
         } catch (error) {
             console.error('Error:', error);

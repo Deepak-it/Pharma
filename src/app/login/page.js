@@ -16,7 +16,7 @@ const LoginForm = () => {
     try {
       const response =  axios.post('/api/validateLogin', { username, password });
       if (response?.data?.message === "Login successful") {
-        router.push('/category')
+        router.push('/products')
       }
     } 
     catch (error) {

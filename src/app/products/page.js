@@ -91,7 +91,7 @@ const ManageProducts = () => {
               onSave={handleSave}
               onClose={() => setShowEditForm(false)}
             /> : 
-          <div style = {{width: '90vw', overflowX: 'scroll'}} className="table-wrapper">
+          <div /* style = {{width: '90vw', overflowX: 'scroll'}} */ className="table-wrapper">
             <div className="table-title">
               <div className="row">
                 <div className="col-sm-9">
